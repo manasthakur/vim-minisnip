@@ -198,7 +198,7 @@ function! minisnip#CopyVisualSelection() abort
     execute "'<,'>d"
     let s:minisnip_selected_text = substitute(@", '\n\+$', '', '')
     execute "normal! O\<Space>\<BS>\<Esc>"
-    startinsert
+    startinsert!
 endfunction
 
 function! minisnip#complete() abort
