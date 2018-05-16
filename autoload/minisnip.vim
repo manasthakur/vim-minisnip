@@ -122,7 +122,7 @@ function! s:SelectPlaceholder() abort
             let @s=substitute(@s, '\V' . g:minisnip_finalenddelim, '', '')
         catch /E486:/
             " There's no placeholder at all, enter insert mode
-            call feedkeys('a', 'n')
+            call feedkeys('A', 'n')
             return
         finally
             let &wrapscan = l:ws
@@ -197,6 +197,7 @@ endfunction
 function! minisnip#CopyVisualSelection() abort
     execute "'<,'>d"
     let s:minisnip_selected_text = substitute(@", '\n\+$', '', '')
+    execute "normal! O\<Space>\<BS>\<Esc>"
     startinsert
 endfunction
 
