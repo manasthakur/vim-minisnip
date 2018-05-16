@@ -43,10 +43,11 @@ if !hasmapto('<Plug>(minisnip)')
 endif
 " visual selection
 if !hasmapto('<Plug>(minisnip-visual)')
-	execute 'xmap <unique> ' . g:minisnip_trigger . ' <Plug>(minisnip-visual)'
+    execute 'xmap <unique> ' . g:minisnip_trigger . ' <Plug>(minisnip-visual)'
 endif
 " Completion
 if !hasmapto('<Plug>(minisnip-complete)')
     imap <C-x><C-t> <Plug>(minisnip-complete)
     inoremap <expr> <C-t> pumvisible() ?  "\<C-n>" : "\<C-t>"
+    imap <expr> <CR> pumvisible() ? "\<Tab>" : "\<CR>"
 endif

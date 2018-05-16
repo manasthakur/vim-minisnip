@@ -154,8 +154,8 @@ function! s:SelectPlaceholder() abort
         endif
         let l:visualmarker = 1
         let l:skip = 1
-	else
-		let l:visualmarker = 0
+    else
+        let l:visualmarker = 0
     endif
 
     " is this placeholder marked as 'evaluate'?
