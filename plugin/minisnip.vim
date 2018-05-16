@@ -34,7 +34,7 @@ snoremap <script> <expr> <Plug>(minisnip) minisnip#ShouldTrigger() ?
             \"\<esc>:call \minisnip#Minisnip()\<cr>" :
             \eval('"' . escape(g:minisnip_trigger, '\"<') . '"')
 inoremap <silent> <Plug>(minisnip-complete) <C-r>=minisnip#complete()<CR>
-xnoremap <silent> <Plug>(minisnip-visual) :call minisnip#CopyVisualSelection()<CR>
+xnoremap <silent> <Plug>(minisnip-visual) :<C-u>call minisnip#CopyVisualSelection()<CR>
 
 " add the default mappings if the user hasn't defined any
 if !hasmapto('<Plug>(minisnip)')
