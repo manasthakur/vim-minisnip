@@ -7,7 +7,7 @@ This fork has the following (backwards compatible) fixes/improvements:
 - Avoid multiple loads of the plugin
 
 Apart from the above, this branch by [manasthakur](https://github.com/manasthakur) consists of a simple placeholder-based bracket mark and jump feature.
-Note that this branch might is maintained for personal use and might not be compatible with the [original vim-minisnip](https://github.com/KeyboardFire/vim-minisnip) and its [improved version](https://github.com/joereynolds/vim-minisnip).
+Note that this branch is maintained for personal use and might not be compatible with the [original vim-minisnip](https://github.com/KeyboardFire/vim-minisnip) and its [improved version](https://github.com/joereynolds/vim-minisnip).
 
 It does not break compatibility with the [original vim-minisnip](https://github.com/KeyboardFire/vim-minisnip], only improves it.
                
