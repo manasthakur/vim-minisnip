@@ -202,9 +202,6 @@ function! minisnip#CopyVisualSelection() abort
 endfunction
 
 function! minisnip#SetupPairs(var) abort
-    if !exists('a:var')
-        return
-    endif
     for l:key in keys(a:var)
         let l:value = a:var[l:key]
         execute "inoremap " . l:key . " " . l:key . l:value . "<++>" . "\<C-\><C-o>5h"
@@ -229,12 +226,8 @@ function! minisnip#BackSpace() abort
     let cur_line = getline('.')
     let before_char = cur_line[col('.')-2]
     let after_char = cur_line[col('.')-1]
-    let l:minisnip_pairs = g:minisnip_pairs
-    if exists('b:minisnip_additional_pairs')
-        call extend(l:minisnip_pairs, b:minisnip_additional_pairs)
-    endif
-    for l:key in keys(l:minisnip_pairs)
-        let l:value = l:minisnip_pairs[l:key]
+    for l:key in keys(g:minisnip_pairs)
+        let l:value = g:minisnip_pairs[l:key]
         if before_char == l:key && after_char == l:value
             if strcharpart(getline('.'), col('.'), 4) == "<++>"
                 return "\<Left>\<C-\>\<C-o>6x"
@@ -253,12 +246,8 @@ function! minisnip#CarriageReturn() abort
     let cur_line = getline('.')
     let before_char = cur_line[col('.')-2]
     let after_char = cur_line[col('.')-1]
-    let l:minisnip_pairs = g:minisnip_pairs
-    if exists('b:minisnip_additional_pairs')
-        call extend(l:minisnip_pairs, b:minisnip_additional_pairs)
-    endif
-    for l:key in keys(l:minisnip_pairs)
-        let l:value = l:minisnip_pairs[l:key]
+    for l:key in keys(g:minisnip_pairs)
+        let l:value = g:minisnip_pairs[l:key]
         if before_char == l:key && after_char == l:value
             if strcharpart(getline('.'), col('.'), 4) == "<++>"
                 return "\<CR>\<Right>\<C-o>4x\<Esc>O"

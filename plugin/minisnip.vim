@@ -45,8 +45,3 @@ inoremap <silent> <BS> <C-r>=minisnip#BackSpace()<CR>
 inoremap <silent> <CR> <C-r>=minisnip#CarriageReturn()<CR>
 
 call minisnip#SetupPairs(g:minisnip_pairs)
-
-augroup minisnip
-	autocmd!
-	autocmd BufNewFile,BufReadPost * if exists('b:minisnip_additional_pairs') | call minisnip#SetupPairs(b:minisnip_additional_pairs) | endif
-augroup END
