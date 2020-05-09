@@ -49,5 +49,4 @@ endif
 if !hasmapto('<Plug>(minisnip-complete)')
     imap <C-x><C-t> <Plug>(minisnip-complete)
     inoremap <expr> <C-t> pumvisible() ?  "\<C-n>" : "\<C-t>"
-    imap <expr> <CR> pumvisible() ? "\<Tab>" : "\<CR>"
 endif
